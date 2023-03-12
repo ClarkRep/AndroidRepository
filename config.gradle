@@ -1,0 +1,98 @@
+//项目编译使用的版本信息
+def addRepos(RepositoryHandler handler, String projectName, ConfigurationContainer configurations) {
+//    //本地的仓库地址
+//    handler.maven {
+//        url uri('./ASM-Respository')
+//    }
+//
+//    //本地的仓库地址
+//    handler.maven {
+//        url uri('./ReadKernel-Respository')
+//    }
+//
+//    //本地的仓库地址
+//    handler.maven {
+//        url uri("${project.rootDir}/LocalRepository")
+//    }
+//
+//    // 腾讯灰度平台
+//    handler.maven {
+//        url "https://mirrors.tencent.com/repository/maven/thirdparty"
+//    }
+//
+//    if (gradle.repoType.equalsIgnoreCase("rdm")) {
+//        println("$handler  now using 'rdm' repositories")
+//        //腾讯云 maven
+//        handler.maven {
+//            url "https://mirrors.cloud.tencent.com/nexus/repository/maven-public/"
+//        }
+//
+//        handler.maven {
+//            url "https://mirrors.cloud.tencent.com/repository/maven/thirdparty"
+//        }
+//
+//        handler.maven {
+//            url "https://mirrors.cloud.tencent.com/repository/maven/thirdparty-snapshots"
+//        }
+////        //腾讯 maven
+////        handler.maven {
+////            url "http://maven.oa.com/nexus/content/groups/androidbuild/"
+////        }
+////
+////        handler.maven {
+////            url uri('http://maven.oa.com/nexus/content/repositories/thirdparty-snapshots')
+////        }
+////
+////        handler.maven {
+////            url uri('http://maven.oa.com/nexus/content/repositories/thirdparty/')
+////        }
+//
+////        handler.google()
+//
+//    } else {
+//        println("$projectName  now using 'local' repositories")
+//        handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//        handler.google()
+//        handler.jcenter()
+//    }
+//
+//    handler.maven {
+//        url 'https://qdnexus.inner.yuewen.com/nexus/content/repositories/releases/'
+//    }
+//
+//    handler.maven {
+//        url "http://qdnexus.inner.yuewen.com/nexus/content/repositories/snapshots/"
+//    }
+//
+//    handler.maven {
+//        url 'http://qdnexus.inner.yuewen.com/nexus/content/groups/public/'
+//    }
+//
+//    handler.maven {
+//        url 'https://developer.huawei.com/repo/'
+//    }
+//
+//    handler.maven {
+//        url "https://jitpack.io"
+//    }
+}
+
+ext.addRepos = this.&addRepos
+
+ext {
+    gradle_build_versions = [
+            android_gradle_plugin: "7.0.3",
+
+            compile_sdk_version  : 33,
+            build_tools_version  : "31.0.0",
+
+            min_sdk_version      : 21,
+            target_sdk_version   : 33,
+
+            java_version         : JavaVersion.VERSION_1_8,
+
+            kotlin_version       : "1.3.61",
+    ]
+}
+
+

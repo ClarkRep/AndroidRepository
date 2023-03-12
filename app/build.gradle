@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    apply from: "${project.rootDir}/config.gradle"
+
+    compileSdk gradle_build_versions.compile_sdk_version
+//    buildToolsVersion gradle_build_versions.build_tools_version
+
+    defaultConfig {
+        applicationId "com.clark.androidrepository"
+
+        minSdk gradle_build_versions.min_sdk_version
+        targetSdk gradle_build_versions.target_sdk_version
+
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility gradle_build_versions.java_version
+        targetCompatibility gradle_build_versions.java_version
+    }
+}
+
+apply from: "${project.rootDir}/component.gradle"
+dependencies {
+    implementation dependent_components.androidx_appcompat_appcompat
+    implementation dependent_components.androidx_constraintlayout_constraintlayout
+
+//    implementation dependent_components.androidx_navigation_navigation_fragment
+//    implementation dependent_components.androidx_navigation_navigation_ui
+//
+//    implementation dependent_components.android_material_material
+}

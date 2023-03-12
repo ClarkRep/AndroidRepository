@@ -1,0 +1,19 @@
+//组件依赖库，所有依赖的三方库都在这里定义，保证版本的一致性。
+ext {
+    dependent_components = [
+            //androidX 的相关组件
+            androidx_appcompat_appcompat              : 'androidx.appcompat:appcompat:1.6.1',
+            androidx_constraintlayout_constraintlayout: 'androidx.constraintlayout:constraintlayout:2.1.4',
+
+            androidx_navigation_navigation_fragment   : 'androidx.navigation:navigation-fragment:2.5.3',
+            androidx_navigation_navigation_ui         : 'androidx.navigation:navigation-ui:2.5.3',
+
+            android_material_material                 : 'com.google.android.material:material:1.8.0',
+    ]
+
+    configurations.all {
+//        exclude group: 'com.yuewen.imageLoader', module: 'sdk'
+//        exclude group: 'commons-codec', module: 'commons-codec'
+    }
+
+}
