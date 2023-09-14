@@ -7,14 +7,22 @@ android {
 
     compileOptions.encoding = "UTF-8"
 
-    compileSdk gradle_build_versions.compile_sdk_version
-//    buildToolsVersion gradle_build_versions.build_tools_version
+    compileSdk 33
 
     defaultConfig {
-        applicationId "com.clark.androidrepository"
+        applicationId "com.clark.androidstorage"
 
-        minSdk gradle_build_versions.min_sdk_version
-        targetSdk gradle_build_versions.target_sdk_version
+        minSdk 21
+
+        /*
+         * 1. targetSdk 29，对应Android10.0版本系统。
+         * 2. 如果运行在Android11及以上系统的手机上，需要在清单文件中配置 android:requestLegacyExternalStorage="true" ，否则动态申请到了外置存储权限，实际也是没有权限读写的。
+         * 3. 如果targetSdk升级到30，也就是Android11.0版本，2的配置也无效了，哪怕申请到外置存储的读写权限，也是没有办法读写的，需要额外去配置权限申请。
+         */
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk 29
+        //noinspection ExpiredTargetSdkVersion
+//        targetSdk 30
 
         versionCode 1
         versionName "1.0"
@@ -37,9 +45,4 @@ apply from: "${project.rootDir}/component.gradle"
 dependencies {
     implementation dependent_components.androidx_appcompat_appcompat
     implementation dependent_components.androidx_constraintlayout_constraintlayout
-
-//    implementation dependent_components.androidx_navigation_navigation_fragment
-//    implementation dependent_components.androidx_navigation_navigation_ui
-//
-//    implementation dependent_components.android_material_material
 }

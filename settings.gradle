@@ -7,4 +7,8 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "AndroidRepository"
+
 include ':app'
+
+//测试Android存储目录+权限
+include ':AndroidStorage'
