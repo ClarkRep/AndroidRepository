@@ -10,7 +10,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.clark.androidstorage"
+        applicationId "com.clark.storagepermission"
 
         minSdk 21
 

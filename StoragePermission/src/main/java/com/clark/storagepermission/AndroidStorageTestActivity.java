@@ -1,4 +1,4 @@
-package com.clark.androidstorage;
+package com.clark.storagepermission;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
 
 import java.io.File;
 import java.io.IOException;
