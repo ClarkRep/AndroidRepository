@@ -12,3 +12,6 @@ include ':app'
 
 //测试Android存储目录+权限
 include ':StoragePermission'
+
+//测试AndroidId的获取
+include ':AndroidIdTest'
