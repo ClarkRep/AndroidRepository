@@ -1,16 +1,20 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     apply from: 'config.gradle'
-
-    repositories {
-        google()
-        mavenCentral()
-    }
+    addRepos(repositories, project.name, configurations)
 
     dependencies {
         classpath "com.android.tools.build:gradle:${gradle_build_versions.android_gradle_plugin}"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${gradle_build_versions.kotlin_version}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
     }
+}
+
+plugins {
+    id 'com.google.devtools.ksp' version '1.6.21-1.0.6' apply false
+}
+
+allprojects {
+    addRepos(repositories, project.name, configurations)
 }
 
 task clean(type: Delete) {

@@ -1,11 +1,10 @@
 package com.clark.androidrepository;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
-import com.clark.storagepermission.AndroidStorageTestActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 

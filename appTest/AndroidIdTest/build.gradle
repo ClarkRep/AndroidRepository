@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    apply from: "${project.rootDir}/config.gradle"
+
+    compileOptions.encoding = "UTF-8"
+
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.clark.androididtest"
+
+        minSdk 21
+        targetSdk 30
+
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility gradle_build_versions.java_version
+        targetCompatibility gradle_build_versions.java_version
+    }
+}
+
+apply from: "${project.rootDir}/component.gradle"
+dependencies {
+    implementation dependentComponents.androidx_appcompat
+    implementation dependentComponents.androidx_constraintlayout
+}

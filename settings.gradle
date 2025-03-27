@@ -1,17 +1,23 @@
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
-    }
-}
-rootProject.name = "AndroidRepository"
+// 接入 Flutter 模块
+apply from: './setting_flutter.gradle'
 
+//dependencyResolutionManagement {
+//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+//    repositories {
+//        google()
+//        mavenCentral()
+//        jcenter() // Warning: this repository is going to shut down soon
+//    }
+//}
+
+//rootProject.name = "AndroidRepository"
+
+// 主工程
 include ':app'
 
 //测试Android存储目录+权限
-include ':StoragePermission'
+include ':appTest:StoragePermission'
 
 //测试AndroidId的获取
-include ':AndroidIdTest'
+include ':appTest:AndroidIdTest'
+
