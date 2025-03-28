@@ -21,3 +21,4 @@ include ':appTest:StoragePermission'
 //测试AndroidId的获取
 include ':appTest:AndroidIdTest'
 
+include ':basic:flutter_basic'

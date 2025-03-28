@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+/// Flutter页面的入口方法
+void main() async {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
