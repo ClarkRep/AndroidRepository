@@ -26,6 +26,8 @@
 
         <activity android:name=".flutter.TestFlutterViewInActivity" />
 
+        <activity android:name=".flutter.TestFlutterRouterActivity" />
+
     </application>
 
 </manifest>
