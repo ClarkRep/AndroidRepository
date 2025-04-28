@@ -15,22 +15,40 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_go_test_custom_view_activity"
+                android:id="@+id/btn_go_flutter_activity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="20dp"
-                android:text="跳转 TestCustomViewActivity" />
+                android:text="跳转FlutterActivity" />
 
             <Button
-                android:id="@+id/btn_go_flutter_main_activity"
+                android:id="@+id/btn_go_flutter_fragment_in_activity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="跳转 FlutterMainActivity" />
+                android:text="跳转承接FlutterFragment的Activity" />
+
+            <Button
+                android:id="@+id/btn_go_flutter_view_in_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="跳转承接FlutterView的Activity" />
+
+            <Button
+                android:id="@+id/btn_test_flutter_router"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="测试 Flutter 路由跳转能力" />
 
         </LinearLayout>
 

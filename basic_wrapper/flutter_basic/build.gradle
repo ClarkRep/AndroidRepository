@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
@@ -8,22 +8,13 @@ android {
     compileOptions.encoding = "UTF-8"
 
     compileSdk gradle_build_versions.compile_sdk_version
-//    buildToolsVersion gradle_build_versions.build_tools_version
 
     defaultConfig {
-
-        applicationId = "${app_packagename}"
-
         minSdk gradle_build_versions.min_sdk_version
         targetSdk gradle_build_versions.target_sdk_version
 
         versionCode 1
         versionName "1.0"
-
-
-        ndk {
-            abiFilters "armeabi-v7a", "arm64-v8a"
-        }
     }
 
     compileOptions {
@@ -39,12 +30,6 @@ android {
     }
 
     buildTypes {
-        debug {
-            debuggable true
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -52,11 +37,11 @@ android {
     }
 }
 
+
 apply from: "${project.rootDir}/component.gradle"
 dependencies {
-    implementation dependentComponents.androidx_appcompat
-    implementation dependentComponents.androidx_constraintlayout
+    // 引入Flutter模块
+    api project(':flutter')
 
     implementation project(':basic:base_ui')
-    implementation project(':basic_wrapper:flutter_basic')
 }

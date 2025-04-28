@@ -15,10 +15,14 @@ apply from: './setting_flutter.gradle'
 // 主工程
 include ':app'
 
-//测试Android存储目录+权限
-include ':appTest:StoragePermission'
+// 测试Android存储目录+权限
+include ':app_test:StoragePermission'
 
-//测试AndroidId的获取
-include ':appTest:AndroidIdTest'
+// 测试AndroidId的获取
+include ':app_test:AndroidIdTest'
 
-include ':basic:flutter_basic'
+// 基础UI组件（Activity、Fragment、View等）
+include ':basic:base_ui'
+
+// Flutter基础组件（FlutterView、FlutterFragment等）
+include ':basic_wrapper:flutter_basic'

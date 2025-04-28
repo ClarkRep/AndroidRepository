@@ -20,6 +20,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".TestCustomViewActivity" />
+
+        <!-- Flutter 相关的测试页面 start ************************************************************ -->
+
+        <activity android:name=".flutter.FlutterMainActivity" />
+
         <activity android:name=".flutter.TestFlutterActivity" />
 
         <activity android:name=".flutter.TestFlutterFragmentInActivity" />
@@ -27,6 +33,8 @@
         <activity android:name=".flutter.TestFlutterViewInActivity" />
 
         <activity android:name=".flutter.TestFlutterRouterActivity" />
+
+        <!-- Flutter 相关的测试页面 end ============================================================== -->
 
     </application>
 
