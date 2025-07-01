@@ -19,7 +19,7 @@ class TestCustormView : View {
         defStyleAttr
     )
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
         val paint = Paint()
@@ -27,15 +27,15 @@ class TestCustormView : View {
 
         paint.color = Color.RED // 设置画笔颜色
         paint.style = Paint.Style.FILL    // 设置填充样式
-        canvas?.drawCircle(200F, 200F, 100F, paint) // 绘制圆形，圆心坐标(200, 200)，半径100
+        canvas.drawCircle(200F, 200F, 100F, paint) // 绘制圆形，圆心坐标(200, 200)，半径100
 
         paint.color = Color.YELLOW // 设置画笔颜色
         paint.style = Paint.Style.STROKE    // 设置填充样式
-        canvas?.drawCircle(200F, 500F, 100F, paint) // 绘制圆形，圆心坐标(200, 500)，半径100
+        canvas.drawCircle(200F, 500F, 100F, paint) // 绘制圆形，圆心坐标(200, 500)，半径100
 
         paint.color = Color.BLUE // 设置画笔颜色
         paint.style = Paint.Style.FILL_AND_STROKE    // 设置填充样式
-        canvas?.drawCircle(200F, 800F, 100F, paint) // 绘制圆形，圆心坐标(200, 800)，半径100
+        canvas.drawCircle(200F, 800F, 100F, paint) // 绘制圆形，圆心坐标(200, 800)，半径100
     }
 
 }

@@ -16,8 +16,7 @@ if (flutter_repository_android.exists()) {
     project(':flutter_repository').projectDir = flutter_repository_dir
 } else if (isBuildWithFlutterSource.toBoolean()) {
     // 本地不存在 Flutter module，将Flutter仓库从远程clone下来
-//    def branch = flutterSourceBranch.toString()
-    def branch = ""
+    def branch = flutter_repository_branch.toString()
     if (branch.length() <= 0) {
         branch = "dev"
     }
