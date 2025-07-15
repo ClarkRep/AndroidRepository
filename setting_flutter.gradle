@@ -14,26 +14,26 @@ if (flutter_repository_android.exists()) {
     setBinding(new Binding([gradle: this]))
     evaluate(new File(flutter_repository_android, 'include_flutter.groovy'))
     project(':flutter_repository').projectDir = flutter_repository_dir
-} else if (isBuildWithFlutterSource.toBoolean()) {
+} else if (is_build_with_flutter_source.toBoolean()) {
     // 本地不存在 Flutter module，将Flutter仓库从远程clone下来
     def branch = flutter_repository_branch.toString()
     if (branch.length() <= 0) {
         branch = "dev"
     }
     println("不存在 flutter 项目，尝试 clone $branch")
-    def gitPath = 'https://xxxxxxxxxxxxxxxx'
+    def gitPath = 'https://github.com/ClarkRep/FlutterRepository.git'
     if (!flutter_repository_dir.exists()) {
         "git clone --branch ${branch} ${gitPath} ${rootDir.absolutePath}/flutter_repository ".execute().text.trim()
-        if (!flutter_repository_dir.exists()) {
-            String url = "${gitPath}".replace("https://git.woa.com/", "git@git.woa.com:")
-            "git clone --branch ${branch} ${url} ${rootDir.absolutePath}/flutter_repository ".execute().text.trim()
-        }
+//        if (!flutter_repository_dir.exists()) {
+//            String url = "${gitPath}".replace("https://git.woa.com/", "git@git.woa.com:")
+//            "git clone --branch ${branch} ${url} ${rootDir.absolutePath}/flutter_repository ".execute().text.trim()
+//        }
     }
     if (flutter_repository_dir.exists()) {
-        println("clone $flutterSourceBranch 完成")
+        println("clone $flutter_repository_branch 完成")
         include ':flutter_repository'
         setBinding(new Binding([gradle: this]))
-        evaluate(new File(flutter_repository_android, 'include_flutter.groovy'))
+        evaluate(new File(flutter_repository_dir, 'include_flutter.groovy'))
         project(':flutter_repository').projectDir = flutter_repository_dir
     } else {
         if (!flutter_repository_dir.exists()) {
