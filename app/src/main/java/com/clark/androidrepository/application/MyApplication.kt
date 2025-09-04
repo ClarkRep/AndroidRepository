@@ -1,7 +1,7 @@
 package com.clark.androidrepository.application
 
 import android.app.Application
-import com.clark.flutterbasic.engine.FlutterEngineGroupInit
+import com.clark.flutterbasic.engine.FlutterEngineGroupWrapper
 
 class MyApplication : Application() {
 
@@ -9,7 +9,7 @@ class MyApplication : Application() {
         super.onCreate()
 
         // 初始化Flutter引擎容器
-        FlutterEngineGroupInit.initEngine(this)
+        FlutterEngineGroupWrapper.initEngineGroup(this)
     }
 
 }

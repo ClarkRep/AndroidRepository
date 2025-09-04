@@ -6,13 +6,13 @@ import io.flutter.embedding.engine.FlutterEngineGroup
 /**
  * Flutter 引擎初容器始化包装类，需要放到Application中初始化
  */
-object FlutterEngineGroupInit {
+object FlutterEngineGroupWrapper {
 
     @JvmStatic
     var flutterEngineGroup: FlutterEngineGroup? = null
 
     @JvmStatic
-    fun initEngine(application: Application) {
+    fun initEngineGroup(application: Application) {
         flutterEngineGroup = FlutterEngineGroup(application)
     }
 

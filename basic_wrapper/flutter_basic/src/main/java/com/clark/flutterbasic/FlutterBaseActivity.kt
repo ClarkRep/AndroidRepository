@@ -3,7 +3,6 @@ package com.clark.flutterbasic
 import android.content.Context
 import android.os.Bundle
 import com.clark.flutterbasic.engine.FlutterEngineWrapper
-import com.clark.flutterbasic.engine.FlutterEngineWrapperDelegate
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.embedding.engine.renderer.FlutterUiDisplayListener
@@ -11,7 +10,7 @@ import io.flutter.embedding.engine.renderer.FlutterUiDisplayListener
 /**
  *  用来承接Flutter页面的Activity容器，包含Flutter引擎和Channel的初始化
  */
-open class FlutterBaseActivity : FlutterActivity(), FlutterEngineWrapperDelegate {
+open class FlutterBaseActivity : FlutterActivity() {
 
     companion object {
         const val TAG = "FlutterBaseActivity"
@@ -33,10 +32,10 @@ open class FlutterBaseActivity : FlutterActivity(), FlutterEngineWrapperDelegate
 
     override fun provideFlutterEngine(context: Context): FlutterEngine? {
         if (engineWrapper == null) {
-            routePath = intent.getStringExtra(PATH)?: "/"
+            routePath = intent.getStringExtra(PATH) ?: "/"
 //            Logger.i(TAG, "provideFlutterEngine routePath = $routePath", true)
             // 创建Flutter引擎实例，传入路由地址：routePath
-            engineWrapper = FlutterEngineWrapper(this, this, "main", routePath)
+            engineWrapper = FlutterEngineWrapper(this, "main", routePath)
             initChannel()
         }
 
@@ -54,10 +53,6 @@ open class FlutterBaseActivity : FlutterActivity(), FlutterEngineWrapperDelegate
                 }
             })
         return engineWrapper!!.engine
-    }
-
-    override fun onNext() {
-
     }
 
     /**

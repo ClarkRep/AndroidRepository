@@ -29,7 +29,7 @@ class TestFlutterViewInActivity : AppCompatActivity() {
         flutterView.requestFocus()
 
         // 创建 FlutterEngine
-        val flutterEngineWrapper = FlutterEngineWrapper(this, null, "main", "/")
+        val flutterEngineWrapper = FlutterEngineWrapper(this, "main", "/")
         // 将FlutterEngine绑定到FlutterView
         flutterView.attachToFlutterEngine(flutterEngineWrapper.engine)
 

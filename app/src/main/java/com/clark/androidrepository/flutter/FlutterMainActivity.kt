@@ -25,14 +25,12 @@ class FlutterMainActivity: CBaseActivity() {
         findViewById<View>(R.id.btn_go_flutter_fragment_in_activity).setOnClickListener {
             val intent =
                 Intent(this, TestFlutterFragmentInActivity::class.java)
-            intent.putExtra(FlutterBaseActivity.PATH, "/home")
             startActivity(intent)
         }
 
         findViewById<View>(R.id.btn_go_flutter_view_in_activity).setOnClickListener {
             val intent =
                 Intent(this, TestFlutterViewInActivity::class.java)
-            intent.putExtra(FlutterBaseActivity.PATH, "/home")
             startActivity(intent)
         }
 
@@ -40,6 +38,7 @@ class FlutterMainActivity: CBaseActivity() {
             val intent =
                 Intent(this, TestFlutterRouterActivity::class.java)
             intent.putExtra(FlutterBaseActivity.PATH, "/")
+//            intent.putExtra(FlutterBaseActivity.PATH, "/home")
             //                intent.putExtra(FlutterBaseActivity.PATH, "/testPage1");
             //                intent.putExtra(FlutterBaseActivity.PATH, "/testPage2");
             startActivity(intent)

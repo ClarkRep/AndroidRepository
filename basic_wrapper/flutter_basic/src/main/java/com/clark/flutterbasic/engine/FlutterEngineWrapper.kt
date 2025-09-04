@@ -8,12 +8,10 @@ import io.flutter.embedding.engine.dart.DartExecutor
 
 class FlutterEngineWrapper(
     activity: Activity,
-    delegate: FlutterEngineWrapperDelegate?,
     entrypoint: String,
     route: String?
 ) {
     val engine: FlutterEngine
-    val delegate: FlutterEngineWrapperDelegate?
 
     init {
         val dartEntrypoint =
@@ -21,24 +19,11 @@ class FlutterEngineWrapper(
                 FlutterInjector.instance().flutterLoader().findAppBundlePath(),
                 entrypoint
             )
-        engine = FlutterEngineGroupInit.flutterEngineGroup!!.createAndRunEngine(
+        engine = FlutterEngineGroupWrapper.flutterEngineGroup!!.createAndRunEngine(
             FlutterEngineGroup
                 .Options(activity)
                 .setDartEntrypoint(dartEntrypoint)
                 .setInitialRoute(route)
         )
-        this.delegate = delegate
     }
-
-    fun attach() {
-
-    }
-
-    fun detach() {
-
-    }
-}
-
-interface FlutterEngineWrapperDelegate {
-    fun onNext()
 }
